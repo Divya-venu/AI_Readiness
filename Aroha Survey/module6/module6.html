@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aroha – AI Readiness Executive Summary Report</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="module6.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════  FIXED HEADER  ══════════════════════ -->
+  <header id="top-header">
+    <div class="header-inner">
+      <img src="https://aroha.co.in/wp-content/uploads/2024/08/aroha_logo.png" alt="Aroha" class="header-logo"
+        onerror="this.outerHTML='<div style=\'display:flex;align-items:center;gap:8px\'><svg width=44 height=30 viewBox=\'0 0 52 36\' fill=none><polygon points=\'6,18 14,8 22,18 14,28\' fill=\'#C0392B\'/><polygon points=\'16,10 24,2 32,10 24,18\' fill=\'#E67E22\'/><polygon points=\'16,26 24,18 32,26 24,34\' fill=\'#27AE60\'/></svg><span style=\'font-size:22px;font-weight:900;color:#111;letter-spacing:-0.5px\'>AROHA</span></div>'" />
+      <span class="header-phone">
+        <a href="https://aroha.co.in/" target="_blank" rel="noopener" class="website-link">aroha.co.in</a>
+      </span>
+    </div>
+  </header>
+
+  <!-- ══════════════════════  MAIN  ══════════════════════ -->
+  <table class="print-table" style="width: 100%; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+    <thead class="print-thead">
+      <tr>
+        <td>
+          <div class="print-header-space"></div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 0;">
+          <main class="main-content" id="reportContent">
+
+            <!-- ── COVER BANNER ── -->
+            <div class="cover-banner">
+              <div style="position:relative;z-index:10;">
+                <p
+                  style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:#fb923c;text-transform:uppercase;margin:0 0 8px;">
+                  AI Readiness Assessment</p>
+                <h4 style="font-size:28px;font-weight:900;color:#fff;margin:0 0 6px;line-height:1.2;">Executive Summary
+                  Report</h4>
+                <p style="font-size:14px;font-weight:600;color:#99a5bf;margin:0 0 20px;">Comprehensive AI Maturity
+                  Analysis &amp; Strategic Roadmap</p>
+
+                <!-- ONE-LINE meta row — nowrap both screen & print -->
+                <div class="cover-meta-row">
+                  <div class="cover-meta-item">
+                    <p style="font-size:11px;color:#8c96ad;margin:0 0 2px;">Organization</p>
+                    <p style="font-size:13px;font-weight:600;color:#fff;margin:0;" id="companyName">—</p>
+                  </div>
+                  <div class="cover-meta-item">
+                    <p style="font-size:11px;color:#8c96ad;margin:0 0 2px;">Contact Person</p>
+                    <p style="font-size:13px;font-weight:600;color:#fff;margin:0;" id="clientName">—</p>
+                  </div>
+                  <div class="cover-meta-item">
+                    <p style="font-size:11px;color:#8c96ad;margin:0 0 2px;">Date</p>
+                    <p style="font-size:13px;font-weight:600;color:#fff;margin:0;" id="reportDate">—</p>
+                  </div>
+                  <div class="cover-meta-item">
+                    <p style="font-size:11px;color:#8c96ad;margin:0 0 2px;">Assessment Lead</p>
+                    <p style="font-size:13px;font-weight:600;color:#fff;margin:0;">Aroha Technologies</p>
+                  </div>
+                  <div class="cover-meta-item">
+                    <p style="font-size:11px;color:#8c96ad;margin:0 0 2px;">Overall Score</p>
+                    <p style="font-size:13px;font-weight:600;color:#fb923c;margin:0;" id="overallLabelCover">—</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 1: EXECUTIVE OVERVIEW ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">1</div>
+                <span class="section-title-text">Executive Overview</span>
+              </div>
+              <div class="grid-3">
+                <div class="score-block">
+                  <p class="score-label-sm">Overall AI Maturity Score</p>
+                  <div>
+                    <div style="display:flex;align-items:flex-end;gap:4px;margin-bottom:4px;">
+                      <span class="score-value" id="overallScore">—</span>
+                      <span class="score-denom">/5.0</span>
+                    </div>
+                    <p class="score-maturity" id="overallLabel">—</p>
+                  </div>
+                  <div>
+                    <div class="score-bar-track">
+                      <div class="score-bar-fill" id="overallBar" style="width:0%"></div>
+                    </div>
+                    <p class="score-bar-note">out of 5.0 maximum</p>
+                  </div>
+                </div>
+                <div class="meta-card">
+                  <p class="meta-label">Assessment Summary</p>
+                  <div class="meta-row"><span class="meta-key">Modules Completed</span><span class="meta-val">5 /
+                      5</span></div>
+                  <div class="meta-row"><span class="meta-key">Total Questions</span><span class="meta-val">30</span>
+                  </div>
+                  <div class="meta-row"><span class="meta-key">Average Score</span><span class="meta-val accent"
+                      id="summaryAvg">—</span></div>
+                  <div class="meta-row"><span class="meta-key">Primary Focus Area</span><span class="badge badge-amber"
+                      id="focusArea">—</span></div>
+                  <div class="meta-row"><span class="meta-key">Strongest Area</span><span class="badge badge-green"
+                      id="strongArea">—</span></div>
+                </div>
+                <div class="meta-card"
+                  style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                  <p class="meta-label" style="align-self:flex-start;">Maturity Radar</p>
+                  <canvas id="radarChart" width="200" height="200" style="max-width:200px;max-height:200px;"></canvas>
+                </div>
+              </div>
+              <div class="overview-box">
+                <p id="overviewText" style="margin:0;">Loading overview...</p>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 2: AI MATURITY FRAMEWORK ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">2</div>
+                <span class="section-title-text">The AI Maturity Framework</span>
+              </div>
+              <p style="font-size:13px;color:#6b7280;margin:0 0 20px;">We evaluate your organisation against six
+                distinct stages of AI evolution. Your current level is highlighted below.</p>
+              <div style="overflow-x:auto;border-radius:12px;border:1px solid #f1f3f5;">
+                <table class="maturity-table" id="maturityTable">
+                  <thead>
+                    <tr>
+                      <th>Level</th>
+                      <th>State</th>
+                      <th>Key Characteristics</th>
+                      <th>AI Reality</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L0</span></td>
+                      <td><span style="font-weight:600;">Ad Hoc</span></td>
+                      <td>Siloed systems, manual reporting, no governance.</td>
+                      <td style="color:#6b7280;">80% of time spent cleaning; models won't scale.</td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L1</span></td>
+                      <td><span style="font-weight:600;">Descriptive</span></td>
+                      <td>Centralised data warehouse, basic BI, defined KPIs.</td>
+                      <td style="color:#6b7280;">Experiments possible; production ML struggles.</td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L2</span></td>
+                      <td><span style="font-weight:600;">Governed</span></td>
+                      <td>Data contracts, observability, lineage established.</td>
+                      <td style="color:#6b7280;">Reliable ML pipelines &amp; repeatable engineering.</td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L3</span></td>
+                      <td><span style="font-weight:600;">ML-Ready</span></td>
+                      <td>Feature stores, CI/CD for data, versioning in place.</td>
+                      <td style="color:#6b7280;">Productionised models and scaled personalisation.</td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L4</span></td>
+                      <td><span style="font-weight:600;">AI-Native</span></td>
+                      <td>Event-driven, RAG pipelines, low-latency APIs.</td>
+                      <td style="color:#6b7280;">AI is an embedded capability, not just a project.</td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-weight:700;color:#959799;">L5</span></td>
+                      <td><span style="font-weight:600;">Autonomous</span></td>
+                      <td>Self-healing pipelines, agentic orchestration.</td>
+                      <td style="color:#6b7280;">Systems optimise themselves; adaptive platforms.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="level-banner">
+                <svg width="18" height="18" fill="none" stroke="#e06533" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p><span style="font-weight:600;color:#e06533;">Your current position: </span><span
+                    id="currentLevelText" style="font-weight:700;color:#111827;">—</span></p>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 3: CURRENT STATE ASSESSMENT ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">3</div>
+                <span class="section-title-text">Current State Assessment</span>
+              </div>
+              <p style="font-size:13px;color:#6b7280;margin:0 0 20px;">Based on survey responses, each dimension is
+                mapped to its current maturity level on the L0–L5 framework.</p>
+              <div style="display:grid;grid-template-columns:1fr 300px;gap:16px;align-items:stretch;">
+                <div class="meta-card">
+                  <p class="meta-label">Module Scores</p>
+                  <div id="moduleBars"></div>
+                </div>
+                <div id="scoreDistribution"></div>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 4: CRITICAL GAP ANALYSIS ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">4</div>
+                <span class="section-title-text">Critical Gap Analysis</span>
+              </div>
+              <p class="section-sub">Key frictions and risk factors preventing movement to the next maturity level,
+                identified from your responses.</p>
+              <div class="gap-grid">
+                <div>
+                  <p class="gap-section-label">Primary Blockers</p>
+                  <div id="blockersList"></div>
+                </div>
+                <div>
+                  <p class="gap-section-label">Risk Factors</p>
+                  <div id="riskList"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 5: STRATEGIC ROADMAP ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">5</div>
+                <span class="section-title-text">Strategic Roadmap &amp; Partner Approach</span>
+              </div>
+              <p class="section-sub">How Aroha partners with you to move the needle — a phased approach from your
+                current state to AI-Native.</p>
+              <div class="timeline-wrap">
+                <div class="timeline-item">
+                  <div class="timeline-left">
+                    <div class="timeline-dot" style="background:#6366f1;box-shadow:0 0 0 4px #eef2ff;"></div>
+                    <div class="timeline-line"></div>
+                  </div>
+                  <div class="timeline-card">
+                    <span class="phase-badge" style="background:#eef2ff;color:#655dec;">Phase 1 · Foundation &nbsp; L0 →
+                      L2</span>
+                    <p style="font-size:15px;font-weight:700;color:#111827;margin:6px 0 6px;">Governed &amp; Reliable
+                    </p>
+                    <p style="font-size:13px;color:#6b7280;margin:0 0 14px;line-height:1.6;">Shift from manual "Ad Hoc"
+                      reporting to a governed, reliable state. We implement data contracts, observability tooling, and
+                      lineage tracking to establish trust across teams and create a solid foundation for AI workloads.
+                    </p>
+                    <div class="phase-tags">
+                      <span class="phase-tag" style="background:#F1F5F9;color:#4f46e5;">Data Contracts</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#4f46e5;">Observability</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#4f46e5;">Governance Framework</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#4f46e5;">Data Lineage</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-left">
+                    <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 4px #fffbeb;"></div>
+                    <div class="timeline-line"></div>
+                  </div>
+                  <div class="timeline-card">
+                    <span class="phase-badge" style="background:#fffbeb;color:#d97706;">Phase 2 · Scale &nbsp; L2 →
+                      L3</span>
+                    <p style="font-size:15px;font-weight:700;color:#111827;margin:6px 0 6px;">ML-Ready</p>
+                    <p style="font-size:13px;color:#6b7280;margin:0 0 14px;line-height:1.6;">Transition to ML-Ready
+                      status with reproducible pipelines (Airflow/dbt), feature stores, and experiment tracking. Enable
+                      your teams to build, test, and deploy models with confidence and repeatability.</p>
+                    <div class="phase-tags">
+                      <span class="phase-tag" style="background:#F1F5F9;color:#d97706;">Airflow / dbt</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#d97706;">Feature Stores</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#d97706;">CI/CD for Data</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#d97706;">Experiment Tracking</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item timeline-item-last">
+                  <div class="timeline-left">
+                    <div class="timeline-dot" style="background:#10b981;box-shadow:0 0 0 4px #ecfdf5;"></div>
+                  </div>
+                  <div class="timeline-card">
+                    <span class="phase-badge" style="background:#ecfdf5;color:#059669;">Phase 3 · Innovation &nbsp; L3 →
+                      L5</span>
+                    <p style="font-size:15px;font-weight:700;color:#111827;margin:6px 0 6px;">AI-Native &amp; Autonomous
+                    </p>
+                    <p style="font-size:13px;color:#6b7280;margin:0 0 14px;line-height:1.6;">Build toward an AI-Native
+                      and eventually Autonomous ecosystem. Integrate RAG pipelines and agentic orchestration to make AI
+                      an embedded capability — where systems self-optimise and adapt with minimal human intervention.
+                    </p>
+                    <div class="phase-tags">
+                      <span class="phase-tag" style="background:#F1F5F9;color:#059669;">RAG Pipelines</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#059669;">Agentic Orchestration</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#059669;">Event-Driven Architecture</span>
+                      <span class="phase-tag" style="background:#F1F5F9;color:#059669;">Self-Healing Pipelines</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ════ SECTION 6: CONCLUSION & NEXT STEPS ════ -->
+            <div class="section-card">
+              <div class="section-header">
+                <div class="section-number">6</div>
+                <span class="section-title-text">Conclusion &amp; Immediate Next Steps</span>
+              </div>
+              <p style="font-size:14px;color:#6b7280;margin:0 0 20px;" id="conclusionText">Loading conclusion...</p>
+              <div id="nextStepsList"></div>
+            </div>
+
+            <!-- ════ CTA ════ -->
+            <div id="ctaSection" class="cta-section">
+              <p class="cta-title">Ready to take action?</p>
+              <p class="cta-sub">Download your comprehensive report or share it with your team</p>
+              <div class="cta-btn-row">
+                <button class="btn-pdf" onclick="downloadPDF()">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download PDF Report
+                </button>
+              </div>
+            </div>
+
+          </main>
+
+          <!-- ══════════════════════  SCREEN FOOTER  ══════════════════════ -->
+           
+          <footer>
+            <div class="footer-inner">
+              <div>
+                <img src="https://aroha.co.in/wp-content/uploads/2026/03/Aroha-White-1.png" class="footer-logo"
+                  alt="Aroha" onerror="this.outerHTML='<span class=\'footer-logo-fallback\'>AROHA</span>'" />
+                <p class="footer-tagline">Empowering organizations to measure, understand, and accelerate their AI
+                  transformation journey with data-driven insights.</p>
+              </div>
+              <div>
+                <p class="footer-contact-title">Contact</p>
+                <p class="footer-contact-text">Jayanagar, Bengaluru, Karnataka 560041</p>
+                <p class="footer-contact-text">hr@aroha.co.in</p>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>© 2026 Aroha Technologies. All rights reserved.</p>
+            </div>
+          </footer>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot class="print-tfoot">
+      <tr>
+        <td style="padding: 0;">
+          <div class="print-footer">
+            <div class="footer-line"></div>
+            <div class="footer-content" style="display: flex; justify-content: space-between;">
+              <span id="footerCompanyName" style="font-size: 11px; color:#6b7280; font-weight: 500;">© 2026 Aroha
+                Technologies</span>
+              <!-- <span style="font-size: 11px; color:#6b7280; font-weight: 500;">Page <span></span>
+                  class="page-number"></span></span> -->
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- ══════════════════════  EMAIL MODAL  ══════════════════════ -->
+  <div id="emailModal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-icon">
+          <svg width="22" height="22" fill="none" stroke="#E06533" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="modal-title">Email Report</h3>
+          <p class="modal-sub">Send your AI Maturity Report to your inbox</p>
+        </div>
+      </div>
+      <label class="modal-label">Email Address</label>
+      <input id="emailInput" type="email" placeholder="your@email.com" class="modal-input" />
+      <p id="emailError" class="modal-error">Please enter a valid email address.</p>
+      <div class="modal-btns">
+        <button class="btn-cancel" onclick="closeEmailModal()">Cancel</button>
+        <button class="btn-send" id="sendBtn" onclick="sendEmail()">
+          <span id="sendBtnText">Send Report</span>
+          <svg id="sendSpinner" class="spinner hidden" fill="none" viewBox="0 0 24 24" style="display:none;">
+            <circle style="opacity:0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+            <path style="opacity:0.75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════  TOAST  ══════════════════════ -->
+  <div id="toast" class="hidden"
+    style="position:fixed;bottom:24px;right:24px;z-index:300;background:#111827;color:#fff;padding:12px 20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+    <svg width="18" height="18" fill="none" stroke="#10b981" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toastMsg" style="font-size:14px;font-weight:500;">Done!</span>
+  </div>
+
+  <script src="module6.js"></script>
+
+</body>
+
+</html>
